@@ -1,4 +1,4 @@
-# NPC 
+# NPC Dialog Example Scene
 
 _demo of npc-dialog-example-scene running in preview._
 
