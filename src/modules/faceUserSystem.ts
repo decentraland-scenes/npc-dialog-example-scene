@@ -18,9 +18,7 @@ export function addFaceUserSystem(dummyTarget: Entity) {
         let trackUserSlerp = robot.getComponent(TrackUserSlerp)
         
         // Check if player moves
-        if(currentCameraPosition.equals(Camera.instance.position)) {
-          // Do nothing
-        } else {
+        if(!currentCameraPosition.equals(Camera.instance.position)) {
           // Update current camera position
           currentCameraPosition.copyFrom(Camera.instance.position)
           trackUserSlerp.fraction = 0
