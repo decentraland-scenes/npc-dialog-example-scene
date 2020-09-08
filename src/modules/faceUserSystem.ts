@@ -3,7 +3,7 @@ export class TrackUserSlerp {
   fraction: number = 0
 }
 
-let currentCameraPosition = new Vector3(0, 0, 0)
+let currentCameraPosition = new Vector3()
 
 // Rotates robot to face the user during interaction
 export function addFaceUserSystem(dummyTarget: Entity) {
@@ -16,17 +16,13 @@ export function addFaceUserSystem(dummyTarget: Entity) {
       for (let robot of this.robotGroup.entities) {
         let transform = robot.getComponent(Transform)
         let trackUserSlerp = robot.getComponent(TrackUserSlerp)
-
+        
         // Check if player moves
-        if (
-          currentCameraPosition.x != Camera.instance.position.x ||
-          currentCameraPosition.y != Camera.instance.position.y ||
-          currentCameraPosition.z != Camera.instance.position.z
-        ) {
+        if(currentCameraPosition.equals(Camera.instance.position)) {
+          // Do nothing
+        } else {
           // Update current camera position
-          currentCameraPosition.x = Camera.instance.position.x
-          currentCameraPosition.y = Camera.instance.position.y
-          currentCameraPosition.z = Camera.instance.position.z
+          currentCameraPosition.copyFrom(Camera.instance.position)
           trackUserSlerp.fraction = 0
         }
 
