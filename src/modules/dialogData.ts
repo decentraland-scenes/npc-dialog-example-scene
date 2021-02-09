@@ -1,4 +1,4 @@
-import { Dialog } from '../../node_modules/@dcl/npc-utils/index'
+import { Dialog } from '@dcl/npc-scene-utils'
 import { alice, bob, charlie } from '../game'
 
 export const AliceDialog: Dialog[] = [
