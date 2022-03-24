@@ -12,14 +12,14 @@ engine.addEntity(baseScene)
 export const alice = new NPC(
   {
     position: new Vector3(8, 1.6, 5),
-    rotation: Quaternion.Euler(0, 180, 0),
+    rotation: Quaternion.Euler(0, 180, 0)
   },
   resources.models.robots.alice,
   () => {
     // animations
     alice.playAnimation('Hello', true, 2)
 
-    let dummyent = new Entity()
+    const dummyent = new Entity()
     dummyent.addComponent(
       new NPCDelay(2, () => {
         alice.playAnimation('Talk')
@@ -42,12 +42,12 @@ export const alice = new NPC(
       width: 256,
       section: {
         sourceHeight: 512,
-        sourceWidth: 512,
-      },
+        sourceWidth: 512
+      }
     },
     onWalkAway: () => {
       alice.playAnimation('Goodbye', true, 2)
-    },
+    }
   }
 )
 
@@ -55,14 +55,14 @@ export const alice = new NPC(
 export const bob = new NPC(
   {
     position: new Vector3(5, 1.6, 11),
-    rotation: Quaternion.Euler(0, 180, 0),
+    rotation: Quaternion.Euler(0, 180, 0)
   },
   resources.models.robots.bob,
   () => {
     // animations
     bob.playAnimation('Hello', true, 2)
 
-    let dummyent = new Entity()
+    const dummyent = new Entity()
     dummyent.addComponent(
       new NPCDelay(2, () => {
         bob.playAnimation('Talk')
@@ -85,12 +85,12 @@ export const bob = new NPC(
       width: 256,
       section: {
         sourceHeight: 512,
-        sourceWidth: 512,
-      },
+        sourceWidth: 512
+      }
     },
     onWalkAway: () => {
       bob.playAnimation('Goodbye', true, 2)
-    },
+    }
   }
 )
 
@@ -98,14 +98,14 @@ export const bob = new NPC(
 export const charlie = new NPC(
   {
     position: new Vector3(11, 1.6, 11),
-    rotation: Quaternion.Euler(0, 180, 0),
+    rotation: Quaternion.Euler(0, 180, 0)
   },
   resources.models.robots.charlie,
   () => {
     // animations
     charlie.playAnimation('Hello', true, 2)
 
-    let dummyent = new Entity()
+    const dummyent = new Entity()
     dummyent.addComponent(
       new NPCDelay(2, () => {
         charlie.playAnimation('Talk')
@@ -128,12 +128,12 @@ export const charlie = new NPC(
       width: 256,
       section: {
         sourceHeight: 512,
-        sourceWidth: 512,
-      },
+        sourceWidth: 512
+      }
     },
     onWalkAway: () => {
       charlie.playAnimation('Goodbye', true, 2)
-    },
+    }
   }
 )
 
@@ -145,7 +145,7 @@ const aliceRings = new Entity()
 aliceRings.addComponent(ringShape)
 aliceRings.addComponent(
   new Transform({
-    position: new Vector3(0, -0.65, 0),
+    position: new Vector3(0, -0.65, 0)
   })
 )
 aliceRings.setParent(alice)
@@ -154,7 +154,7 @@ const bobRings = new Entity()
 bobRings.addComponent(ringShape)
 bobRings.addComponent(
   new Transform({
-    position: new Vector3(0, -0.65, -0.075),
+    position: new Vector3(0, -0.65, -0.075)
   })
 )
 bobRings.setParent(bob)
@@ -163,7 +163,7 @@ const charlieRings = new Entity()
 charlieRings.addComponent(ringShape)
 charlieRings.addComponent(
   new Transform({
-    position: new Vector3(0, -0.55, -0.2),
+    position: new Vector3(0, -0.55, -0.2)
   })
 )
 charlieRings.setParent(charlie)
